@@ -32,9 +32,10 @@ function Home({ dispatch }) {
   };
 
   return (
-    <section>
+    <section className="w-1/2 m-auto">
       {isLoading && <Loading />}
-      <div className="flex flex-col bg-slate-100">
+      <img src="static/logo.png" width={300} alt="Logo" className="m-auto" />
+      <div className="flex rounded-md border border-lime-500 flex-col bg-lime-100 h-[73vh] overflow-hidden overflow-y-scroll">
         {list &&
           list.map((p, i) => <Item key={i} data={p} onClick={itemOnClick} />)}
       </div>

@@ -26,27 +26,26 @@ export const Pagination = ({
 
   let lastPage = paginationRange && paginationRange[paginationRange.length - 1];
   const selected =
-    "z-10 bg-indigo-50 border-red-500 text-red-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer";
+    "z-10 bg-sky-50 border-sky-500 text-sky-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer";
   const disabled =
-    "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 opacity-25 cursor-not-allowed";
+    "relative inline-flex items-center px-2 py-2 rounded-l-md border border-sky-300 bg-sky-50 text-sm font-medium text-sky-500 hover:bg-sky-50 opacity-50 cursor-not-allowed";
 
   const renderPills = () =>
     paginationRange &&
     paginationRange.map((pageNumber, i) => {
       if (pageNumber === DOTS) {
         return (
-          <span className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+          <span className="relative inline-flex items-center px-4 py-2 border border-sky-300 bg-sky-50 text-sm font-medium text-sky-700">
             &#8230;
           </span>
         );
       }
-      // Render our Page Pills
       return (
         <li
           className={
             pageNumber === currentPage
               ? selected
-              : "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+              : "bg-sky-50 border-sky-300 text-sky-500 hover:bg-sky-100 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
           }
           onClick={() => onPageChange(pageNumber)}
         >
@@ -63,7 +62,7 @@ export const Pagination = ({
 
   return (
     <nav
-      class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+      class="relative z-0 flex rounded-md -space-x-px mt-4 justify-center"
       aria-label="Pagination"
     >
       <p
@@ -71,10 +70,10 @@ export const Pagination = ({
         className={
           currentPage === 1
             ? disabled
-            : "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer"
+            : "relative inline-flex items-center px-2 py-2 rounded-l-md border border-sky-300 bg-sky-50 text-sm font-medium text-sky-500 hover:bg-sky-50 cursor-pointer"
         }
       >
-        <ChevronLeftIcon className="h-5 w-5 text-red-500" />
+        <ChevronLeftIcon className="h-5 w-5 text-sky-500" />
         <span class="sr-only">Anterior</span>
       </p>
       {renderPills()}
@@ -83,10 +82,10 @@ export const Pagination = ({
         className={
           currentPage === lastPage
             ? disabled
-            : "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer"
+            : "relative inline-flex items-center px-2 py-2 rounded-r-md border border-sky-300 bg-sky-50 text-sm font-medium text-sky-500 hover:bg-sky-50 cursor-pointer"
         }
       >
-        <ChevronRightIcon className="h-5 w-5 text-red-500" />
+        <ChevronRightIcon className="h-5 w-5 text-sky-500" />
         <span class="sr-only">Siguiente</span>
       </p>
     </nav>

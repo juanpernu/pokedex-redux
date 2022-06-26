@@ -11,8 +11,9 @@ function Details() {
   } = useSelector((state) => state);
 
   return (
-    <section className="flex flex-col justify-center">
+    <section className="flex flex-col justify-center w-1/2 m-auto">
       {isLoading && <Loading />}
+      <img src="static/logo.png" width={300} alt="Logo" className="m-auto" />
       {pokemon ? (
         <Detail data={pokemon} />
       ) : (
