@@ -1,0 +1,5 @@
+export const SET_POKEMONS = "SET_POKEMONS";
+export const SET_POKEMON = "SET_POKEMON";
+export const SET_TOTALCOUNT = "SET_TOTALCOUNT";
+export const START_LOADING = "START_LOADING";
+export const FINISH_LOADING = "FINISH_LOADING";
