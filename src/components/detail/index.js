@@ -2,7 +2,6 @@ import React from "react";
 import { typesColors } from "../../utils";
 
 export const Detail = ({ data }) => {
-  console.log(data);
   const {
     name,
     id,

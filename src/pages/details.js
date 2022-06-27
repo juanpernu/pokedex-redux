@@ -1,14 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, connect } from "react-redux";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { Detail, Empty, Loading, Button } from "../components";
+import { getPokemon } from "../actions";
 
-function Details() {
+function Details({ dispatch }) {
   const navigate = useNavigate();
   const {
     pokemons: { pokemon },
     loading: { isLoading },
   } = useSelector((state) => state);
+
+  const changePokemon = (action) => {
+    let id;
+    if (action === "next") id = `/${pokemon.id + 1}/`;
+    if (action === "prev") id = `/${pokemon.id - 1}/`;
+    getPokemon(id)(dispatch);
+  };
 
   return (
     <section className="flex flex-col justify-center w-1/2 m-auto">
@@ -19,11 +28,27 @@ function Details() {
       ) : (
         <Empty message="Ups! No hay pokemon seleccionado" />
       )}
-      <Button onClick={() => navigate("/")}>
-        <p>Volver</p>
-      </Button>
+      <div className="flex justify-between">
+        <Button
+          className="bg-sky-50 border-sky-500 text-sky-600 group"
+          onClick={() => changePokemon("prev")}
+        >
+          <ChevronLeftIcon className="h-5 w-5 text-sky-600 group-hover:text-white" />
+          <span className="sr-only">Anterior</span>
+        </Button>
+        <Button className="w-full mx-4" onClick={() => navigate("/")}>
+          <p>Back to list</p>
+        </Button>
+        <Button
+          className="bg-sky-50 border-sky-500 text-sky-600 group"
+          onClick={() => changePokemon("next")}
+        >
+          <ChevronRightIcon className="h-5 w-5 text-sky-600 group-hover:text-white" />
+          <span className="sr-only">Anterior</span>
+        </Button>
+      </div>
     </section>
   );
 }
 
-export default Details;
+export default connect()(Details);
