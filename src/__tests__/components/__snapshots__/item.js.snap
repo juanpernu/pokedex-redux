@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render list item and click on it 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col border-b p-2 hover:bg-lime-200 hover:cursor-pointer"
+  >
+    <span
+      class="block text-xs font-medium text-gray-500 capitalize"
+    >
+      ID: 1
+    </span>
+    <p
+      class="block text-base font-medium text-gray-700 mr-4 capitalize"
+    >
+      item-test
+    </p>
+  </div>
+</DocumentFragment>
+`;

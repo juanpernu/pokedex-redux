@@ -35,13 +35,17 @@ export const Pagination = ({
     paginationRange.map((pageNumber, i) => {
       if (pageNumber === DOTS) {
         return (
-          <span className="relative inline-flex items-center px-4 py-2 border border-sky-300 bg-sky-50 text-sm font-medium text-sky-700">
+          <span
+            key={i}
+            className="relative inline-flex items-center px-4 py-2 border border-sky-300 bg-sky-50 text-sm font-medium text-sky-700"
+          >
             &#8230;
           </span>
         );
       }
       return (
         <li
+          key={i}
           className={
             pageNumber === currentPage
               ? selected
@@ -54,16 +58,17 @@ export const Pagination = ({
       );
     });
 
-  // If there are less than 2 times in pagination range
-  // we should not render the component
+  // If there are less than 2 times in pagination
+  // range we should not render the component.
   if (currentPage === 0 || (paginationRange && paginationRange.length < 2)) {
     return null;
   }
 
   return (
     <nav
-      class="relative z-0 flex rounded-md -space-x-px mt-4 justify-center"
+      className="relative z-0 flex rounded-md -space-x-px mt-4 justify-center"
       aria-label="Pagination"
+      label="pagination"
     >
       <p
         onClick={onPrevious}
@@ -74,7 +79,7 @@ export const Pagination = ({
         }
       >
         <ChevronLeftIcon className="h-5 w-5 text-sky-500" />
-        <span class="sr-only">Anterior</span>
+        <span className="sr-only">Anterior</span>
       </p>
       {renderPills()}
       <p
@@ -86,7 +91,7 @@ export const Pagination = ({
         }
       >
         <ChevronRightIcon className="h-5 w-5 text-sky-500" />
-        <span class="sr-only">Siguiente</span>
+        <span className="sr-only">Siguiente</span>
       </p>
     </nav>
   );

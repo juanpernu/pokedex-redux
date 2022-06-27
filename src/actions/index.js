@@ -7,11 +7,11 @@ import {
 } from "../types";
 import { getPokemons, getPokemonById } from "../services";
 
-const startLoading = () => {
+export const startLoading = () => {
   return { type: START_LOADING };
 };
 
-const finishLoading = () => {
+export const finishLoading = () => {
   return { type: FINISH_LOADING };
 };
 

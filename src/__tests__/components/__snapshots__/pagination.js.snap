@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the pagination and click on it 1`] = `
+<DocumentFragment>
+  <nav
+    aria-label="Pagination"
+    class="relative z-0 flex rounded-md -space-x-px mt-4 justify-center"
+    label="pagination"
+  >
+    <p
+      class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-sky-300 bg-sky-50 text-sm font-medium text-sky-500 hover:bg-sky-50 opacity-50 cursor-not-allowed"
+    >
+      <svg
+        aria-hidden="true"
+        class="h-5 w-5 text-sky-500"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      <span
+        class="sr-only"
+      >
+        Anterior
+      </span>
+    </p>
+    <li
+      class="z-10 bg-sky-50 border-sky-500 text-sky-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+    >
+      1
+    </li>
+    <li
+      class="bg-sky-50 border-sky-300 text-sky-500 hover:bg-sky-100 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+    >
+      2
+    </li>
+    <li
+      class="bg-sky-50 border-sky-300 text-sky-500 hover:bg-sky-100 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+    >
+      3
+    </li>
+    <li
+      class="bg-sky-50 border-sky-300 text-sky-500 hover:bg-sky-100 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+    >
+      4
+    </li>
+    <li
+      class="bg-sky-50 border-sky-300 text-sky-500 hover:bg-sky-100 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer"
+    >
+      5
+    </li>
+    <p
+      class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-sky-300 bg-sky-50 text-sm font-medium text-sky-500 hover:bg-sky-50 cursor-pointer"
+    >
+      <svg
+        aria-hidden="true"
+        class="h-5 w-5 text-sky-500"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      <span
+        class="sr-only"
+      >
+        Siguiente
+      </span>
+    </p>
+  </nav>
+</DocumentFragment>
+`;
