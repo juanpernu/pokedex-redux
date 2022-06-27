@@ -2,6 +2,7 @@ import {
   SET_POKEMONS,
   SET_POKEMON,
   SET_TOTALCOUNT,
+  SET_CREATEPOKEMON,
   START_LOADING,
   FINISH_LOADING,
 } from "../types";
@@ -33,6 +34,13 @@ const setTotalCount = (count) => {
   return {
     type: SET_TOTALCOUNT,
     payload: { count },
+  };
+};
+
+export const createPokemon = (list, specs) => {
+  return {
+    type: SET_CREATEPOKEMON,
+    payload: { list, specs },
   };
 };
 

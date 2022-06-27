@@ -1,4 +1,9 @@
-import { SET_POKEMONS, SET_POKEMON, SET_TOTALCOUNT } from "../types";
+import {
+  SET_POKEMONS,
+  SET_POKEMON,
+  SET_CREATEPOKEMON,
+  SET_TOTALCOUNT,
+} from "../types";
 
 const pokemons = (state = {}, action) => {
   const { type, payload = {} } = action;
@@ -14,6 +19,12 @@ const pokemons = (state = {}, action) => {
       return {
         ...state,
         pokemon,
+      };
+    case SET_CREATEPOKEMON:
+      const { list, specs } = payload;
+      return {
+        ...state,
+        list: [specs, ...list],
       };
     case SET_TOTALCOUNT:
       const { count } = payload;

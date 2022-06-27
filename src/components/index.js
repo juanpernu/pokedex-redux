@@ -1,6 +1,10 @@
 export { Button } from "./button";
+export { Cta } from "./cta";
 export { Detail } from "./detail";
 export { Empty } from "./empty";
+export { Form } from "./form";
 export { Item } from "./item";
 export { Loading } from "./loading";
+export { Modal } from "./modal";
 export { Pagination } from "./pagination";
+export { Tooltip } from "./tooltip";

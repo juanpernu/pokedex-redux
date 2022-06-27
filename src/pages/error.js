@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../components";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -19,14 +20,16 @@ class ErrorBoundary extends React.Component {
 
     if (this.state.hasError) {
       return (
-        <div className="">
-          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="flex flex-col mt-8">
+          <h2 className="text-xl leading-8 font-extrabold text-center text-white mt-2 leading-8 font-extrabold tracking-tight sm:text-4xl">
             Ups! Algo salió mal
           </h2>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+          <p className="mt-4 text-lg text-white lg:mx-auto">
             ERROR: 400 Bad Request
           </p>
-          <button onClick={(e) => onClickHandler(e)}>Ir al inicio</button>
+          <Button className="w-full mx-4" onClick={(e) => onClickHandler(e)}>
+            <p>Ir al inicio</p>
+          </Button>
         </div>
       );
     }
