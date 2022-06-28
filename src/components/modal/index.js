@@ -9,7 +9,7 @@ export const Modal = ({ isOpenModal, closeModal, title, children }) => {
 
   return (
     <>
-      <div className="overflow-y-auto overflow-x-hidden fixed bottom-1/2 z-20 w-auto h-modal rounded bg-white p-8 shadow-lg">
+      <div className="overflow-y-auto overflow-x-hidden fixed bottom-1/2 left-2 right-2 md:left-[34%] md:right-0 z-20 sm:w-1/2 md:w-1/3 h-modal rounded bg-white p-8 shadow-lg">
         <div className="flex flex-col">
           <span onClick={closeModal}>
             <XIcon

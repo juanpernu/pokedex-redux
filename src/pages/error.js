@@ -13,21 +13,20 @@ class ErrorBoundary extends React.Component {
 
   render() {
     const history = window.history;
-    const onClickHandler = (e) => {
-      e.prevenDefault();
+    const onClickHandler = () => {
       return history.go("/");
     };
 
     if (this.state.hasError) {
       return (
-        <div className="flex flex-col mt-8">
-          <h2 className="text-xl leading-8 font-extrabold text-center text-white mt-2 leading-8 font-extrabold tracking-tight sm:text-4xl">
+        <div className="md:w-1/2 md:px-0 px-2 w-full flex flex-col justify-center m-auto mt-8">
+          <h2 className="text-3xl leading-8 font-extrabold text-center text-white mt-2 leading-8 tracking-tight sm:text-4xl">
             Ups! Algo salió mal
           </h2>
-          <p className="mt-4 text-lg text-white lg:mx-auto">
+          <p className="mt-4 text-base text-white text-center lg:mx-auto">
             ERROR: 400 Bad Request
           </p>
-          <Button className="w-full mx-4" onClick={(e) => onClickHandler(e)}>
+          <Button className="w-full" onClick={onClickHandler}>
             <p>Ir al inicio</p>
           </Button>
         </div>

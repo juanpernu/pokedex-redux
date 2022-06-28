@@ -1,7 +1,21 @@
-import { START_LOADING, FINISH_LOADING } from "../types";
+import {
+  START_LOADING,
+  FINISH_LOADING,
+  SET_SNACKBAR,
+  RESET_SNACKBAR,
+} from "../types";
 
-const loading = (state = {}, action) => {
-  const { type } = action;
+const init = {
+  snackbarHandler: {
+    showSnackbar: false,
+    snackbarMessage: "",
+    snackbarType: "",
+  },
+  isLoading: false,
+};
+
+const loading = (state = init, action) => {
+  const { type, payload } = action;
   switch (type) {
     case START_LOADING: {
       return {
@@ -13,6 +27,23 @@ const loading = (state = {}, action) => {
       return {
         ...state,
         isLoading: false,
+      };
+    }
+    case SET_SNACKBAR: {
+      const { snackbarHandler } = payload;
+      return {
+        ...state,
+        snackbarHandler,
+      };
+    }
+    case RESET_SNACKBAR: {
+      return {
+        ...state,
+        snackbarHandler: {
+          showSnackbar: false,
+          snackbarMessage: "",
+          snackbarType: "",
+        },
       };
     }
     default:

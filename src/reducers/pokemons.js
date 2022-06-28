@@ -1,7 +1,7 @@
 import {
   SET_POKEMONS,
   SET_POKEMON,
-  SET_CREATEPOKEMON,
+  SET_ADDPOKEMON,
   SET_TOTALCOUNT,
 } from "../types";
 
@@ -20,7 +20,7 @@ const pokemons = (state = {}, action) => {
         ...state,
         pokemon,
       };
-    case SET_CREATEPOKEMON:
+    case SET_ADDPOKEMON:
       const { list, specs } = payload;
       return {
         ...state,

@@ -2,9 +2,11 @@ import {
   SET_POKEMONS,
   SET_POKEMON,
   SET_TOTALCOUNT,
-  SET_CREATEPOKEMON,
+  SET_ADDPOKEMON,
+  SET_SNACKBAR,
   START_LOADING,
   FINISH_LOADING,
+  RESET_SNACKBAR,
 } from "../types";
 import { getPokemons, getPokemonById } from "../services";
 
@@ -37,26 +39,58 @@ const setTotalCount = (count) => {
   };
 };
 
-export const createPokemon = (list, specs) => {
+const setSnackbar = (snackbar) => {
   return {
-    type: SET_CREATEPOKEMON,
+    type: SET_SNACKBAR,
+    payload: { snackbarHandler: snackbar },
+  };
+};
+
+export const resetSnackbar = () => {
+  return {
+    type: RESET_SNACKBAR,
+  };
+};
+
+export const setAddPokemon = (list, specs) => {
+  return {
+    type: SET_ADDPOKEMON,
     payload: { list, specs },
   };
 };
 
-export const getPokemonList = (params = "") => async (dispatch) => {
-  try {
-    dispatch(startLoading());
-    const { data } = await getPokemons(params);
-
-    dispatch(setPokemons(data.results));
-    dispatch(setTotalCount(data.count));
-  } catch (err) {
-    throw new Error(err.response.data);
-  } finally {
-    dispatch(finishLoading());
-  }
+export const createPokemon = (list, pokemon) => (dispatch) => {
+  dispatch(setAddPokemon(list, pokemon));
+  dispatch(
+    setSnackbar({
+      showSnackbar: true,
+      snackbarMessage: "Pokemon successfully added",
+      snackbarType: "success",
+    })
+  );
 };
+
+export const getPokemonList =
+  (params = "") =>
+  async (dispatch) => {
+    try {
+      dispatch(startLoading());
+      const { data } = await getPokemons(params);
+
+      dispatch(setPokemons(data.results));
+      dispatch(setTotalCount(data.count));
+    } catch (err) {
+      dispatch(
+        setSnackbar({
+          showSnackbar: true,
+          snackbarMessage: "Ups! We where unable to find Pokemons",
+          snackbarType: "error",
+        })
+      );
+    } finally {
+      dispatch(finishLoading());
+    }
+  };
 
 export const getPokemon = (id) => async (dispatch) => {
   try {
@@ -65,7 +99,13 @@ export const getPokemon = (id) => async (dispatch) => {
 
     dispatch(setPokemon(data));
   } catch (err) {
-    throw new Error(err.response.data);
+    dispatch(
+      setSnackbar({
+        showSnackbar: true,
+        snackbarMessage: "Ups! We where unable to the Pokemon",
+        snackbarType: "error",
+      })
+    );
   } finally {
     dispatch(finishLoading());
   }

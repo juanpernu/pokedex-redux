@@ -20,7 +20,7 @@ function Details({ dispatch }) {
   };
 
   return (
-    <section className="flex flex-col justify-center w-1/2 m-auto">
+    <section className="md:w-1/2 md:px-0 px-2 w-full flex flex-col justify-center m-auto">
       {isLoading && <Loading />}
       <img src="static/logo.png" width={300} alt="Logo" className="m-auto" />
       {pokemon ? (

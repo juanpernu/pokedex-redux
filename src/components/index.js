@@ -7,4 +7,5 @@ export { Item } from "./item";
 export { Loading } from "./loading";
 export { Modal } from "./modal";
 export { Pagination } from "./pagination";
+export { Snackbar } from "./snackbar";
 export { Tooltip } from "./tooltip";

@@ -4,6 +4,14 @@ export const axiosInstance = axios.create({
   baseURL: "https://pokeapi.co/api/v2/",
 });
 
+export const formatNewPokemon = (spec) => {
+  return {
+    name: spec.name,
+    isNew: true,
+    url: `https://pokeapi.co/api/v2/pokemon/${spec.id}/`,
+  };
+};
+
 export const typesColors = {
   normal: "#94a3b8",
   fighting: "#a16207",

@@ -52,7 +52,7 @@ export const Detail = ({ data }) => {
           Height: {height}m
         </p>
       </div>
-      <div className="flex justify-between mt-8 px-8">
+      <div className="grid grid-cols-3 gap-y-4 md:flex md:justify-between mt-8 md:px-8">
         {stats.map((s, i) => (
           <div className="flex flex-col text-center">
             <p className="m-0 p-0 text-sm font-bold">{s.base_stat}</p>
