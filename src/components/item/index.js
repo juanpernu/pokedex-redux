@@ -4,8 +4,11 @@ export const Item = ({ data: { name, url, isNew = false }, onClick }) => {
   const [, id] = url.split("pokemon");
   const sanitazedId = id.replace("/", "").replace("/", "");
   return (
-    <div className="flex justify-between border-b p-2 hover:bg-lime-200 hover:cursor-pointer">
-      <div className="flex flex-col" onClick={() => onClick(id)}>
+    <div
+      className="flex justify-between border-b p-2 hover:bg-lime-200 hover:cursor-pointer"
+      onClick={() => onClick(id)}
+    >
+      <div className="flex flex-col">
         <span className="block text-xs font-medium text-gray-500 capitalize">
           ID: {sanitazedId}
         </span>

@@ -98,6 +98,7 @@ export const getPokemon = (id) => async (dispatch) => {
     const { data } = await getPokemonById(id);
 
     dispatch(setPokemon(data));
+    return data;
   } catch (err) {
     dispatch(
       setSnackbar({

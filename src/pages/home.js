@@ -46,9 +46,9 @@ function Home({ dispatch }) {
     getPokemonList(params)(dispatch);
   };
 
-  const itemOnClick = (id) => {
-    getPokemon(id)(dispatch);
-    navigate("/details");
+  const itemOnClick = async (id) => {
+    const data = await getPokemon(id)(dispatch);
+    if (data) navigate("/details");
   };
 
   const addPokemon = (specs) => {

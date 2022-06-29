@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render cta button and click on it 1`] = `
+<DocumentFragment>
+  <button
+    class="bg-blue-500 hover:shadow-lg absolute bottom-16 md:bottom-4 right-4 mt-4 inline-flex h-14 w-14 w-full justify-center rounded-full p-2 text-xs font-light uppercase text-white shadow-sm transition ease-in-out hover:bg-blue-800 group hover:bg-blue-800 sm:bottom-8"
+  >
+    <svg
+      aria-hidden="true"
+      class="flex h-7 w-7 self-center"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <div
+      class="absolute hidden w-32 rounded bg-slate-500 px-4 py-2 group-hover:block bottom-2.5 right-16"
+    >
+      <p>
+        Add pokemon
+      </p>
+    </div>
+  </button>
+</DocumentFragment>
+`;
