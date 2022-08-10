@@ -1,7 +1,6 @@
-# Blockchain Pokedex challenge
+# Pokedex with Redux
 
-This is the Pokedex challenge for blockchain.com.
-You can find the challenge scope and requirements [here](https://github.com/dsisto-bc/pokedex).
+This is a Pokedes with a paginated list of all pokemon. Clicking on one of them render a details page of a pokemon.
 
 ## Getting Started
 
